@@ -1,4 +1,7 @@
 // imported modules
+import { useEffect } from 'react';
+import { connect } from 'react-redux';
+import cartActions from 'redux/cart/cartActions';
 import {
    ShoppingCartIcon,
    SearchIcon,
@@ -6,7 +9,12 @@ import {
 } from '@heroicons/react/outline'
 
 // create component
-const NavTop = () => {
+const NavTop = ({ quantityCartProducts }) => {
+
+   // effect after rendering
+   useEffect(() => {
+      cartActions.loadQuantityProducts();
+   }, [])
 
    // render
    return (
@@ -46,7 +54,7 @@ const NavTop = () => {
                      rounded-full bg-blue-500 text-white md:h-5 md:w-5 h-4 w-4
                      pb-1 font-medium"
                   >
-                     3
+                     {quantityCartProducts}
                   </p>
                </div>
             </div>
@@ -55,5 +63,11 @@ const NavTop = () => {
    )
 }
 
+// state mapping to pass properties to component
+const mapStateToProps = (state) => ({
+   themeMode: state.themeState.themeMode,
+   quantityCartProducts: state.cartState.quantityProducts
+})
+
 // export component
-export default NavTop
+export default connect(mapStateToProps)(NavTop);

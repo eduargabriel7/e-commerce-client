@@ -48,7 +48,7 @@
 /* themes */
 .light {
    --color-bg-default: rgb(255, 255, 255);
-   --color-bg-paper: #c4c4c4b0;
+   --color-bg-paper: #e7e7e7b0;
    --color-bg-hover-paper: #cacacab0;
    --color-bg-primary: rgb(115, 141, 226);
    --color-bg-shadow: #181818cc;

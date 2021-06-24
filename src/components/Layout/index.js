@@ -18,8 +18,8 @@ const Layout = ({ children, themeMode }) => {
 
          {/* body */}
          <div
-            className={`${themeMode} bg-default min-h-screen
-            text-default font-raleway md:text-sm text-xs md:pt-20 pt-16`}
+            className={`${themeMode} bg-default min-h-screen 
+            text-default font-raleway md:text-sm text-xs`}
          >
 
             {/* navigation */}

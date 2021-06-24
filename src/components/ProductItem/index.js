@@ -1,8 +1,12 @@
 // imported modules
-import Image from 'next/image'
+import Image from 'next/image';
+import { useRouter } from 'next/router'
 
 // create component
 const ProductItem = ({ product }) => {
+
+   // hooks
+   const router = useRouter();
 
    // render
    return (
@@ -26,7 +30,12 @@ const ProductItem = ({ product }) => {
          <div className="overflow-auto overscroll-contain flex-grow">{product.title}</div>
 
          {/* tools */}
-         <p className="button text-blue-600 hover:underline">Show more</p>
+         <p
+            onClick={() => router.push(`/product/${product.id}`)}
+            className="button text-blue-600 hover:underline w-20"
+         >
+            Show more
+         </p>
       </div>
    )
 }
