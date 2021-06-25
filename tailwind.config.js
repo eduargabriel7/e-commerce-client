@@ -5,7 +5,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'raleway': ['Raleway']
+        'raleway': ['Raleway', 'Roboto'],
+        'roboto': ['Roboto', 'Raleway']
       },
       backgroundColor: {
         default: "var(--color-bg-default)",
@@ -43,7 +44,7 @@ module.exports = {
       // => @media (min-width: 1536px) { ... }
     },
     boxShadow: {
-      DEFAULT: 'var(--color-shadow-default) 0px 1px 7px 0px',
+      DEFAULT: 'var(--color-shadow-default) 0px 1.5px 5px 0px',
       sm: '0 1px 2px 2px var(--color-shadow-default)',
       md: '0 4px 6px -1px var(--color-shadow-default), 0 2px 4px -1px var(--color-shadow-default)',
       lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',

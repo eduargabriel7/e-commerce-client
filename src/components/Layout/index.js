@@ -1,10 +1,17 @@
 // imported modules
+import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import Head from 'next/head'
 import Nav from 'components/Nav';
+import cartActions from 'redux/cart/cartActions';
 
 // create component
 const Layout = ({ children, themeMode }) => {
+
+   // effect after rendering
+   useEffect(() => {
+      cartActions.loadProducts();
+   }, [])
 
    // render
    return (
@@ -18,8 +25,8 @@ const Layout = ({ children, themeMode }) => {
 
          {/* body */}
          <div
-            className={`${themeMode} bg-default min-h-screen 
-            text-default font-raleway md:text-sm text-xs`}
+            className={`${themeMode} relative bg-default min-h-screen 
+            text-default font-raleway md:text-sm text-xs md:pt-20 pt-16 md:pb-60 pb-48`}
          >
 
             {/* navigation */}
@@ -28,6 +35,10 @@ const Layout = ({ children, themeMode }) => {
             {/* pages */}
             {children}
 
+            {/* footer */}
+            <div className="absolute bottom-0 md:h-60 h-48 w-full md:mt-20 mt-10 bg-paper">
+
+            </div>
          </div>
       </>
    )

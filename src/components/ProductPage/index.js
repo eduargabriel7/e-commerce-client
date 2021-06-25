@@ -12,7 +12,7 @@ const ProductPage = ({ product }) => {
    // render
    return (
       <div
-         className="max-w-screen-xl mx-auto md:pt-28 pt-20 md:px-4 px-2"
+         className="max-w-screen-xl mx-auto md:pt-12 pt-8 pb-10 md:px-4 px-2"
       >
          <div
             className="w-full rounded-md flex md:flex-row flex-col

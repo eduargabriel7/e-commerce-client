@@ -9,14 +9,11 @@ const Home = ({ products }) => {
    return (
       <>
          <div
-            className="max-w-screen-xl mx-auto md:pt-20 pt-16
+            className="max-w-screen-xl mx-auto pb-10
             flex flex-col md:space-y-20 space-y-10"
          >
             <Banner />
             <CarouselProducts products={products} />
-         </div>
-         <div className="md:h-96 h-64 w-full md:mt-20 mt-10 bg-paper">
-
          </div>
       </>
    )

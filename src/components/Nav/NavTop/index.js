@@ -1,15 +1,18 @@
 // imported modules
 import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { connect } from 'react-redux';
 import cartActions from 'redux/cart/cartActions';
 import {
-   ShoppingCartIcon,
-   SearchIcon,
-   MenuIcon
+   ShoppingCartIcon, SearchIcon, MenuIcon,
+   UserCircleIcon
 } from '@heroicons/react/outline'
 
 // create component
 const NavTop = ({ quantityCartProducts }) => {
+
+   // next hooks
+   const router = useRouter();
 
    // effect after rendering
    useEffect(() => {
@@ -29,7 +32,12 @@ const NavTop = ({ quantityCartProducts }) => {
             </div>
 
             {/* logo */}
-            <p className="md:flex hidden w-1/4 text-lg">Tech Commerce</p>
+            <p
+               onClick={() => router.push('/')}
+               className="button md:flex hidden w-1/4 text-lg"
+            >
+               Tech Commerce
+            </p>
 
             {/* search */}
             <div className="md:w-2/4 w-full">
@@ -45,14 +53,24 @@ const NavTop = ({ quantityCartProducts }) => {
             </div>
 
             {/* tools */}
-            <div className="md:w-1/4 flex items-center justify-end md:space-x-3">
-               <p className="md:flex hidden">home</p>
+            <div className="md:w-1/4 flex items-center justify-end md:space-x-2">
+
+               {/* user */}
+               <UserCircleIcon
+                  className="md:h-10 h-9 p-2 rounded-full button hover-active-gray text-icon"
+               />
+
+               {/* cart */}
                <div className="relative button hover-active-gray p-2 rounded-full">
-                  <ShoppingCartIcon className="md:h-6 h-5 text-icon" />
+                  <ShoppingCartIcon
+                     onClick={() => router.push('/cart')}
+                     className="md:h-6 h-5 text-icon"
+                  />
                   <p
-                     className="absolute -top-0.5 right-0 flex items-center justify-center
+                     className={`${quantityCartProducts < 1 && 'hidden'}
+                     absolute -top-0.5 right-0 flex items-center justify-center
                      rounded-full bg-blue-500 text-white md:h-5 md:w-5 h-4 w-4
-                     pb-1 font-medium"
+                     font-medium font-roboto`}
                   >
                      {quantityCartProducts}
                   </p>

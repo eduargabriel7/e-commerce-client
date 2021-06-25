@@ -12,10 +12,13 @@ const cartActions = {
    },
 
    loadQuantityProducts: () => {
-      let quantityProducts = JSON.parse(localStorage.getItem('cartProducts'))?.length;
+      let quantityProducts = 0;
+      JSON.parse(localStorage.getItem('cartProducts'))?.map(product => {
+         quantityProducts = quantityProducts + product.quantity;
+      })
       store.dispatch({
          type: 'LOAD_QUANTITY_PRODUCTS',
-         payload: quantityProducts ? quantityProducts : 0
+         payload: quantityProducts
       })
    },
 
@@ -40,6 +43,20 @@ const cartActions = {
    removeToCart: (product) => {
       store.dispatch({
          type: 'REMOVE_TO_CART',
+         payload: product
+      })
+   },
+
+   increaseQuantity: (product) => {
+      store.dispatch({
+         type: 'INCREASE_QUANTITY',
+         payload: product
+      })
+   },
+
+   decreaseQuantity: (product) => {
+      store.dispatch({
+         type: 'DECREASE_QUANTITY',
          payload: product
       })
    }
