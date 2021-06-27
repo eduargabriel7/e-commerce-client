@@ -1,33 +1,36 @@
 // imported modules
-import Banner from 'components/Banner';
-import CarouselProducts from 'components/CarouselProducts';
+import { useQuery } from '@apollo/client';
+import GET_PRODUCTS from 'graphql/products/productsQuery/getProducts';
+import HomePage from 'components/HomePage';
 
 // create page
-const Home = ({ products }) => {
+const Home = () => {
+
+   // graphql query
+   const { loading, error, data } = useQuery(GET_PRODUCTS, { ssr: false });
+
+   if (loading) return (
+      <div
+         className="max-w-screen-xl mx-auto md:pt-20 pt-16 md:pb-72 pb-56
+         flex flex-col md:space-y-20 space-y-10"
+      >
+         loading
+      </div>
+   )
+
+   if (error) return (
+      <div
+         className="max-w-screen-xl mx-auto md:pt-20 pt-16 md:pb-72 pb-56
+         flex flex-col md:space-y-20 space-y-10"
+      >
+         error
+      </div>
+   )
 
    // render
    return (
-      <>
-         <div
-            className="max-w-screen-xl mx-auto pb-10
-            flex flex-col md:space-y-20 space-y-10"
-         >
-            <Banner />
-            <CarouselProducts products={products} />
-         </div>
-      </>
+      <HomePage products={data.getProducts} />
    )
-}
-
-// server side rendering props
-export async function getServerSideProps(context) {
-
-   const products = await fetch('https://fakestoreapi.com/products')
-      .then(res => res.json());
-
-   return {
-      props: { products },
-   }
 }
 
 // export page

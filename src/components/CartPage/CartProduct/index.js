@@ -15,8 +15,8 @@ const CartProduct = ({ product }) => {
    // render
    return (
       <div
-         className="relative sm:h-36 h-48 flex sm:flex-row flex-col
-         border border-gray-500 border-opacity-30 rounded-md p-4"
+         className="relative sm:h-36 h-44 flex sm:flex-row flex-col
+          border-gray-500 border-opacity-30 rounded-lg sm:p-4 p-2 shadow"
       >
          {/* image */}
          <div
@@ -49,10 +49,10 @@ const CartProduct = ({ product }) => {
             <button
                onClick={() => cartActions.decreaseQuantity(product)}
                disabled={product.quantity < 2 && true}
-               className={`${product.quantity < 2 && ' opacity-60'} 
+               className={`${product.quantity < 2 && ' opacity-40'} 
                rounded-full button hover-active-gray`}
             >
-               <ChevronLeftIcon className="md:h-9 h-8 p-2 text-blue-600" />
+               <ChevronLeftIcon className="md:h-9 h-8 p-2 text-blue-700" />
             </button>
 
             {/* number */}
@@ -62,20 +62,21 @@ const CartProduct = ({ product }) => {
             <button
                onClick={() => cartActions.increaseQuantity(product)}
                disabled={product.quantity > 9 && true}
-               className={`${product.quantity > 9 && ' opacity-60'} 
+               className={`${product.quantity > 9 && ' opacity-40'} 
                rounded-full button hover-active-gray`}
             >
-               <ChevronRightIcon className="md:h-9 h-8 p-2 text-blue-600" />
+               <ChevronRightIcon className="md:h-9 h-8 p-2 text-blue-700" />
             </button>
          </div>
 
          {/* price */}
-         <p
-            className="sm:w-2/12 w-full sm:h-full h-1/5 flex items-center justify-center
-            sm:text-base font-roboto font-medium text-icon truncate"
+         <div
+            className="sm:w-2/12 w-full sm:h-full h-1/5 flex items-center justify-center"
          >
-            $ {product.price * product.quantity}
-         </p>
+            <p className="sm:text-base font-roboto font-medium text-icon truncate">
+               $ {product.price * product.quantity}
+            </p>
+         </div>
 
          {/* remove button */}
          <XIcon

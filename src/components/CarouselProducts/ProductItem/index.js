@@ -11,7 +11,7 @@ const ProductItem = ({ product }) => {
    // render
    return (
       <div
-         className="shadow m-2 md:h-80 h-64 bg-transparent rounded-md p-4
+         className="shadow m-4 md:h-80 h-64 bg-transparent rounded-md p-4
          flex flex-col space-y-2"
       >
          {/* image */}
@@ -19,6 +19,7 @@ const ProductItem = ({ product }) => {
             <Image
                src={product.image} alt="product-image"
                layout="fill" objectFit="contain"
+               priority
             />
          </div>
 

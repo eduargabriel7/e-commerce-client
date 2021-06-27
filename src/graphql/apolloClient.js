@@ -3,7 +3,7 @@ import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 
 // http link
 const httpLink = createHttpLink({
-   uri: 'http://localhost:4000/graphql'
+   uri: 'https://eduargabriel7-ecommerce-server.herokuapp.com/graphql'
 })
 
 // client

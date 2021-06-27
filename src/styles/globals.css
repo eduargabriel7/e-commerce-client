@@ -29,6 +29,11 @@
       sm:active:bg-gray-500 sm:active:bg-opacity-30
       active:bg-gray-500 active:bg-opacity-30;
    }
+   .hover-active-black {
+      @apply sm:hover:bg-black sm:hover:bg-opacity-20
+      sm:active:bg-black sm:active:bg-opacity-30
+      active:bg-black active:bg-opacity-30;
+   }
    .hover-active-pink {
       @apply sm:hover:bg-pink-700 sm:hover:bg-opacity-30
       sm:active:bg-pink-700 sm:active:bg-opacity-50
@@ -49,7 +54,7 @@
 /* themes */
 .light {
    --color-bg-default: rgb(255, 255, 255);
-   --color-bg-paper: #e7e7e7b0;
+   --color-bg-paper: #dfdfdf;
    --color-bg-hover-paper: #cacacab0;
    --color-bg-primary: rgb(115, 141, 226);
    --color-bg-shadow: #181818cc;

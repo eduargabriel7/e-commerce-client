@@ -1,38 +1,77 @@
 // imported modules
 import Image from 'next/image'
-import { Carousel } from 'react-responsive-carousel';
+import Slider from "react-slick";
 import image1 from 'assets/image-1.jpg';
 import image2 from 'assets/image-2.jpg';
 import image3 from 'assets/image-3.jpg';
+import {
+   ChevronLeftIcon, ChevronRightIcon
+} from '@heroicons/react/outline';
+
+// create component
+const NextArrow = ({ onClick }) => {
+   return (
+      <ChevronRightIcon
+         className="absolute z-30 right-4 lg:top-48 md:top-40 h-10 p-2 rounded-full 
+         hover-active-black text-white"
+         onClick={onClick}
+      />
+   );
+}
+
+// create component
+const PrevArrow = ({ onClick }) => {
+   return (
+      <ChevronLeftIcon
+         className="absolute z-30 left-4 lg:top-48 md:top-40 h-10 p-2 rounded-full 
+         hover-active-black text-white"
+         onClick={onClick}
+      />
+   );
+}
 
 // create component
 const Banner = () => {
 
+   // slider settings
+   const settings = {
+      fade: true,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      pauseOnHover: true,
+      infinite: true,
+      speed: 1000,
+      slidesToShow: 1,
+      prevArrow: <PrevArrow />,
+      nextArrow: <NextArrow />,
+      responsive: [
+         {
+            breakpoint: 768,
+            settings: {
+               arrows: false
+            }
+         },
+      ]
+   }
+
+   // images
+   const images = [image1, image2, image3]
+
    // render
    return (
-      <Carousel
-         infiniteLoop
-         autoPlay
-         interval={5000}
-         showThumbs={false}
-         showStatus={false}
-      >
-         <div className="lg:max-h-112 md:max-h-72 max-h-60 flex items-center">
-            <Image
-               src={image1} alt="banner-picture"
-            />
-         </div>
-         <div className="lg:max-h-112 md:max-h-72 max-h-60 flex items-center">
-            <Image
-               src={image2} alt="banner-picture"
-            />
-         </div>
-         <div className="lg:max-h-112 md:max-h-72 max-h-60 flex items-center">
-            <Image
-               src={image3} alt="banner-picture"
-            />
-         </div>
-      </Carousel>
+      <Slider {...settings}>
+         {
+            images.map(image => (
+               <div key={image} className="relative lg:h-112 md:h-96 sm:h-72 h-52">
+                  <Image
+                     src={image} alt="banner-picture"
+                     layout="fill" objectFit="cover"
+                     priority
+                  />
+               </div>
+            ))
+         }
+      </Slider>
    )
 }
 

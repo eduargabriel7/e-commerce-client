@@ -4,13 +4,15 @@ import { connect } from 'react-redux';
 import Head from 'next/head'
 import Nav from 'components/Nav';
 import cartActions from 'redux/cart/cartActions';
+import themeActions from 'redux/theme/themeActions';
 
 // create component
-const Layout = ({ children, themeMode }) => {
+const Layout = ({ children, theme }) => {
 
    // effect after rendering
    useEffect(() => {
       cartActions.loadProducts();
+      themeActions.loadTheme();
    }, [])
 
    // render
@@ -25,8 +27,8 @@ const Layout = ({ children, themeMode }) => {
 
          {/* body */}
          <div
-            className={`${themeMode} relative bg-default min-h-screen 
-            text-default font-raleway md:text-sm text-xs md:pt-20 pt-16 md:pb-60 pb-48`}
+            className={`${theme} relative bg-default min-h-screen 
+            text-default font-raleway md:text-sm text-xs`}
          >
 
             {/* navigation */}
@@ -46,7 +48,7 @@ const Layout = ({ children, themeMode }) => {
 
 // state mapping to pass properties to component
 const mapStateToProps = (state) => ({
-   themeMode: state.themeState.themeMode
+   theme: state.themeState.theme
 })
 
 // export component

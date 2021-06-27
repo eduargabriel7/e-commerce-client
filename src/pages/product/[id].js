@@ -1,25 +1,46 @@
 // imported modules
 import ProductPage from 'components/ProductPage';
+import { useRouter } from 'next/router';
+import { useQuery } from '@apollo/client';
+import GET_PRODUCT from 'graphql/products/productsQuery/getProduct';
 
 // create page
-const Product = ({ product }) => {
+const Product = () => {
+
+   // next hooks
+   const router = useRouter();
+   const productId = router.query.id;
+
+   // graphql query
+   const { loading, error, data } = useQuery(
+      GET_PRODUCT,
+      { variables: { productId } }
+   );
+
+   if (loading) return (
+      <div
+         className="max-w-screen-xl mx-auto md:pt-20 pt-16 md:pb-72 pb-56
+         flex flex-col md:space-y-20 space-y-10"
+      >
+         loading
+      </div>
+   )
+
+   if (error) return (
+      <div
+         className="max-w-screen-xl mx-auto md:pt-20 pt-16 md:pb-72 pb-56
+         flex flex-col md:space-y-20 space-y-10"
+      >
+         {error.message}
+      </div>
+   )
 
    // render
    return (
-      <ProductPage product={product} />
+      <ProductPage product={data.getProduct} />
    )
 }
 
-// server side rendering props
-export async function getServerSideProps({ params }) {
-
-   const product = await fetch(`https://fakestoreapi.com/products/${params.id}`)
-      .then(res => res.json());
-
-   return {
-      props: { product },
-   }
-}
 
 // export page
 export default Product;

@@ -21,19 +21,22 @@ const cartReducer = (state = cartState, { type, payload }) => {
          }
 
       case 'ADD_TO_CART':
+         // clone payload
+         const productToAdd = Object.assign({}, payload)
+         // verify cart
          const inTheCart = state.products.filter(product => {
-            return product.id === payload.id
+            return product.id === productToAdd.id
          })
          if (inTheCart.length > 0) { return state }
          // add quantity
-         payload.quantity = 1;
+         productToAdd.quantity = 1;
          // add to localStorage
          localStorage.setItem('cartProducts', JSON.stringify(
-            [...state.products, payload]
+            [...state.products, productToAdd]
          ))
          return {
             ...state,
-            products: [...state.products, payload],
+            products: [...state.products, productToAdd],
             quantityProducts: state.quantityProducts + 1
          }
 

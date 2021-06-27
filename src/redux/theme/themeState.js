@@ -1,7 +1,7 @@
 
 // create theme state
 const themeState = {
-     themeMode: 'light'
+     theme: 'light'
 }
 
 // export module

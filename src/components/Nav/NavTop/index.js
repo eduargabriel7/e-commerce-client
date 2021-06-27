@@ -9,7 +9,10 @@ import {
 } from '@heroicons/react/outline'
 
 // create component
-const NavTop = ({ quantityCartProducts }) => {
+const NavTop = ({
+   quantityCartProducts,
+   setOpenDrawer
+}) => {
 
    // next hooks
    const router = useRouter();
@@ -21,13 +24,16 @@ const NavTop = ({ quantityCartProducts }) => {
 
    // render
    return (
-      <div className="fixed top-0 w-full md:h-20 h-16 shadow z-50 bg-default">
+      <div className="fixed top-0 w-full md:h-20 h-16 shadow z-40 bg-default">
          <div
             className="max-w-screen-lg mx-auto h-full w-full flex items-center
             space-x-2 px-2"
          >
             {/* menu button */}
-            <div className="md:hidden button hover-active-gray p-2 rounded-full">
+            <div
+               onClick={() => setOpenDrawer(true)}
+               className="button hover-active-gray p-2 rounded-full"
+            >
                <MenuIcon className="h-5 text-icon" />
             </div>
 
@@ -40,7 +46,7 @@ const NavTop = ({ quantityCartProducts }) => {
             </p>
 
             {/* search */}
-            <div className="md:w-2/4 w-full">
+            <div className="md:w-2/4 w-full sm:px-8 md:px-0">
                <div className="w-full md:h-10 h-8 flex items-center space-x-2 py-1 px-2 shadow rounded-md">
                   <SearchIcon className="md:h-5 h-4 text-gray-500" />
                   <input
@@ -61,9 +67,11 @@ const NavTop = ({ quantityCartProducts }) => {
                />
 
                {/* cart */}
-               <div className="relative button hover-active-gray p-2 rounded-full">
+               <div
+                  onClick={() => router.push('/cart')}
+                  className="relative button hover-active-gray p-2 rounded-full"
+               >
                   <ShoppingCartIcon
-                     onClick={() => router.push('/cart')}
                      className="md:h-6 h-5 text-icon"
                   />
                   <p
@@ -83,7 +91,6 @@ const NavTop = ({ quantityCartProducts }) => {
 
 // state mapping to pass properties to component
 const mapStateToProps = (state) => ({
-   themeMode: state.themeState.themeMode,
    quantityCartProducts: state.cartState.quantityProducts
 })
 
