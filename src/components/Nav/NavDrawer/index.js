@@ -57,7 +57,7 @@ const NavDrawer = ({
                {/* menu */}
                <div
                   className={`${drawerAnimation === 'open' ? 'animate-open-drawer' : 'animate-close-drawer'}
-                  fixed h-full xl:w-96 md:w-80 sm:w-72 w-56 bg-default z-50
+                  fixed h-screen xl:w-96 md:w-80 sm:w-72 w-56 bg-default z-50
                   flex flex-col`}
                >
 
@@ -130,7 +130,7 @@ const NavDrawer = ({
                <div
                   onClick={onDrawerClose}
                   className={`${drawerAnimation === 'open' ? 'animate-open-bg-shadow' : 'animate-close-bg-shadow'}
-                  absolute h-full w-full bg-shadow z-40`}
+                  fixed h-screen w-full bg-shadow z-40`}
                >
                </div>
             </>
