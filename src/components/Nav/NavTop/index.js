@@ -24,7 +24,7 @@ const NavTop = ({
 
    // render
    return (
-      <div className="fixed top-0 w-full md:h-20 h-16 shadow z-40 bg-default">
+      <div className="fixed top-0 w-full md:h-20 h-16 shadow z-40 bg-paper">
          <div
             className="max-w-screen-lg mx-auto h-full w-full flex items-center
             space-x-2 px-2"
@@ -78,7 +78,7 @@ const NavTop = ({
                      className={`${quantityCartProducts < 1 && 'hidden'}
                      absolute -top-0.5 right-0 flex items-center justify-center
                      rounded-full bg-blue-500 text-white md:h-5 md:w-5 h-4 w-4
-                     font-medium font-roboto`}
+                     md:font-medium font-roboto md:text-xs text-xxs`}
                   >
                      {quantityCartProducts}
                   </p>

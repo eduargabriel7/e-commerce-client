@@ -50,14 +50,6 @@ const CarouselProducts = ({ products }) => {
                autoplay: false,
                slidesToShow: 2,
             }
-         },
-         {
-            breakpoint: 380,
-            settings: {
-               autoplay: false,
-               slidesToShow: 1,
-               centerMode: true
-            }
          }
       ]
    };

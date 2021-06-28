@@ -15,8 +15,8 @@ const CartProduct = ({ product }) => {
    // render
    return (
       <div
-         className="relative sm:h-36 h-44 flex sm:flex-row flex-col
-          border-gray-500 border-opacity-30 rounded-lg sm:p-4 p-2 shadow"
+         className="sm:h-36 h-44 sm:p-4 p-2 flex sm:flex-row flex-col
+         relative rounded-md bg-paper"
       >
          {/* image */}
          <div

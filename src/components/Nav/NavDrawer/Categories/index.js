@@ -1,4 +1,5 @@
 // imported modules
+import { useRouter } from 'next/router';
 import {
    CollectionIcon, ChevronDownIcon,
    DesktopComputerIcon, ShoppingBagIcon
@@ -8,8 +9,12 @@ import {
 const Categories = ({
    onCategoriesClick,
    openCategories,
-   menuAnimation
+   menuAnimation,
+   onDrawerClose
 }) => {
+
+   // next hooks
+   const router = useRouter();
 
    // render
    return (
@@ -31,6 +36,10 @@ const Categories = ({
                ${menuAnimation === 'close' && 'animate-collapse-height'}`}
             >
                <button
+                  onClick={() => {
+                     router.push('/products/technology');
+                     onDrawerClose();
+                  }}
                   className="flex items-center space-x-2 py-3 md:px-6 px-4 button hover-active-gray"
                >
                   <DesktopComputerIcon className="button sm:h-10 h-9 p-2 text-icon" />

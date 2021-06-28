@@ -4,6 +4,9 @@ module.exports = {
    darkMode: false, // or 'media' or 'class'
    theme: {
       extend: {
+         fontSize: {
+            'xxs': '.60rem'
+         },
          fontFamily: {
             'raleway': ['Raleway', 'Roboto'],
             'roboto': ['Roboto', 'Raleway']
@@ -11,8 +14,6 @@ module.exports = {
          backgroundColor: {
             default: "var(--color-bg-default)",
             paper: "var(--color-bg-paper)",
-            hoverPaper: "var(--color-bg-hover-paper)",
-            primary: "var(--color-bg-primary)",
             shadow: "var(--color-bg-shadow)"
          },
          textColor: {
@@ -27,12 +28,12 @@ module.exports = {
             112: "28rem"
          },
          animation: {
-            'open-bg-shadow': 'animation-open-bg-shadow 0.7s',
-            'close-bg-shadow': 'animation-close-bg-shadow 0.7s',
-            'open-drawer': 'animation-open-drawer 0.7s',
-            'close-drawer': 'animation-close-drawer 0.7s',
-            'expand-height': 'animation-expand-height 0.7s',
-            'collapse-height': 'animation-collapse-height 0.7s'
+            'open-bg-shadow': 'animation-open-bg-shadow 0.5s',
+            'close-bg-shadow': 'animation-close-bg-shadow 0.5s',
+            'open-drawer': 'animation-open-drawer 0.5s',
+            'close-drawer': 'animation-close-drawer 0.5s',
+            'expand-height': 'animation-expand-height 0.5s',
+            'collapse-height': 'animation-collapse-height 0.5s'
          },
          keyframes: {
             'animation-open-bg-shadow': {
@@ -57,7 +58,7 @@ module.exports = {
             },
             'animation-collapse-height': {
                '0%': { maxHeight: '15rem', opacity: 1 },
-               '100%': { maxHeight: '0', opacity: 0 }
+               '100%': { maxHeight: '0', opacity: 0.5 }
             }
          }
       },

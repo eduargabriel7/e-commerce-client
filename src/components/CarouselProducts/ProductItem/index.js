@@ -11,8 +11,8 @@ const ProductItem = ({ product }) => {
    // render
    return (
       <div
-         className="shadow m-4 md:h-80 h-64 bg-transparent rounded-md p-4
-         flex flex-col space-y-2"
+         className="md:h-80 h-60 md:p-4 p-2 md:m-4 m-2 
+         flex flex-col space-y-2 bg-paper rounded-md"
       >
          {/* image */}
          <div className="relative min-h-1/2">
@@ -27,7 +27,7 @@ const ProductItem = ({ product }) => {
          <div className="border-b border-gray-500 border-opacity-20 w-full"></div>
 
          {/* info */}
-         <p className="md:text-lg font-sans font-medium text-icon">$ {product.price}</p>
+         <p className="md:text-lg font-roboto font-medium text-icon tracking-wide">$ {product.price}</p>
          <div className="overflow-auto overscroll-contain flex-grow">{product.title}</div>
 
          {/* tools */}

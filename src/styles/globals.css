@@ -53,10 +53,8 @@
 
 /* themes */
 .light {
-   --color-bg-default: rgb(255, 255, 255);
-   --color-bg-paper: #dfdfdf;
-   --color-bg-hover-paper: #cacacab0;
-   --color-bg-primary: rgb(115, 141, 226);
+   --color-bg-default: #e7e7e7;
+   --color-bg-paper: #ffffff;
    --color-bg-shadow: #181818cc;
    --color-text-default: #000000;
    --color-text-disabled: #505050;
@@ -66,8 +64,8 @@
    --color-shadow-default: #20202057;
 }
 .dark {
-   --color-bg-default: #0d1116;
-   --color-bg-paper: #171c22;
+   --color-bg-default: #131922;
+   --color-bg-paper: #0f141a;
    --color-bg-hover-paper: #171c22;
    --color-bg-primary: rgb(19, 38, 100);
    --color-bg-shadow: #7c7c7c60;

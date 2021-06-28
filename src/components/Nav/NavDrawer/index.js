@@ -6,7 +6,7 @@ import themeActions from 'redux/theme/themeActions';
 import Categories from './Categories';
 import {
    ChevronLeftIcon, HomeIcon, ShoppingCartIcon,
-   MoonIcon, SunIcon
+   MoonIcon, SunIcon, TableIcon
 } from '@heroicons/react/outline';
 
 // create component
@@ -31,7 +31,7 @@ const NavDrawer = ({
       setTimeout(() => {
          setOpenDrawer(false);
          setDrawerAnimation('open');
-      }, 500);
+      }, 400);
    }
 
    // on categories click
@@ -40,7 +40,7 @@ const NavDrawer = ({
          setMenuAnimation('close');
          setTimeout(() => {
             setOpenCategories(false);
-         }, 500);
+         }, 400);
       }
       else {
          setMenuAnimation('open');
@@ -57,19 +57,18 @@ const NavDrawer = ({
                {/* menu */}
                <div
                   className={`${drawerAnimation === 'open' ? 'animate-open-drawer' : 'animate-close-drawer'}
-                  fixed h-screen xl:w-96 md:w-80 sm:w-72 w-56 bg-default z-50
-                  flex flex-col`}
+                  h-screen xl:w-96 md:w-80 sm:w-72 w-56 flex flex-col fixed z-50 bg-paper`}
                >
 
                   {/* header */}
                   <div
-                     className="flex items-center justify-end border-b border-gray-500
-                     border-opacity-40 py-2 px-4 bg-blue-700"
+                     className="py-2 px-4 flex items-center justify-end border-b border-gray-500
+                     border-opacity-40 bg-default"
                   >
                      {/* close button */}
                      <ChevronLeftIcon
                         onClick={onDrawerClose}
-                        className="button sm:h-10 h-9 p-2 rounded-full hover-active-black text-white"
+                        className="button sm:h-10 h-9 p-2 rounded-full hover-active-gray"
                      />
                   </div>
 
@@ -102,6 +101,7 @@ const NavDrawer = ({
                      onCategoriesClick={onCategoriesClick}
                      openCategories={openCategories}
                      menuAnimation={menuAnimation}
+                     onDrawerClose={onDrawerClose}
                   />
 
                   {/* theme */}
