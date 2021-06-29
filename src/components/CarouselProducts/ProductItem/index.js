@@ -11,11 +11,11 @@ const ProductItem = ({ product }) => {
    // render
    return (
       <div
-         className="md:h-80 h-60 md:p-4 p-2 md:m-4 m-2 
-         flex flex-col space-y-2 bg-paper rounded-md"
+         className="md:h-80 h-52 md:p-4 p-2 md:m-4 m-2 
+         flex flex-col justify-between bg-paper rounded-md shadow"
       >
          {/* image */}
-         <div className="relative min-h-1/2">
+         <div className="relative h-3/5">
             <Image
                src={product.image} alt="product-image"
                layout="fill" objectFit="contain"
@@ -27,13 +27,17 @@ const ProductItem = ({ product }) => {
          <div className="border-b border-gray-500 border-opacity-20 w-full"></div>
 
          {/* info */}
-         <p className="md:text-lg font-roboto font-medium text-icon tracking-wide">$ {product.price}</p>
-         <div className="overflow-auto overscroll-contain flex-grow">{product.title}</div>
+         <p className="md:text-lg font-roboto text-icon tracking-wide">
+            $ {product.price}
+         </p>
+         <div className="md:text-base overflow-auto overscroll-contain truncate">
+            {product.title}
+         </div>
 
          {/* tools */}
          <p
             onClick={() => router.push(`/product/${product.id}`)}
-            className="button text-blue-600 hover:underline w-20"
+            className="md:text-sm text-xxs button text-blue-600 hover:underline w-20"
          >
             Show more
          </p>

@@ -1,7 +1,7 @@
 import React from 'react'
 
 // create component
-const OptionsPanel = () => {
+const OptionsPanel = ({ setCategory }) => {
 
    // render
    return (
@@ -17,6 +17,7 @@ const OptionsPanel = () => {
 
          {/* Computers */}
          <p
+            onClick={() => setCategory('computers')}
             className="md:text-base font-medium p-2 button hover-active-gray
                rounded-md w-min"
          >
@@ -25,6 +26,7 @@ const OptionsPanel = () => {
 
          {/* Notebooks */}
          <p
+            onClick={() => setCategory('notebooks')}
             className="md:text-base font-medium p-2 button hover-active-gray
                rounded-md w-min"
          >
@@ -33,6 +35,7 @@ const OptionsPanel = () => {
 
          {/* cell phones */}
          <p
+            onClick={() => setCategory('cellphones')}
             className="md:text-base font-medium p-2 button hover-active-gray
                rounded-md w-min whitespace-nowrap"
          >
@@ -41,6 +44,7 @@ const OptionsPanel = () => {
 
          {/* gaming */}
          <p
+            onClick={() => setCategory('gamming')}
             className="md:text-base font-medium p-2 button hover-active-gray
                rounded-md w-min whitespace-nowrap"
          >

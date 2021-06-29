@@ -1,10 +1,22 @@
 // imported modules
+import { useState } from 'react';
+import { useQuery } from '@apollo/client';
+import GET_PRODUCTS_BY_CATEGORY from 'graphql/products/productsQuery/getProductsByCategory';
 import OptionsPanel from './OptionsPanel';
 import ProductItem from '../ProductItem';
 import OptionsBar from './OptionsBar';
 
 // create component
-const TechnologyPage = ({ products }) => {
+const TechnologyPage = () => {
+
+   // state component
+   const [category, setCategory] = useState('technology');
+
+   // graphql query
+   const { loading, error, data } = useQuery(
+      GET_PRODUCTS_BY_CATEGORY,
+      { variables: { category } }
+   );
 
    // render
    return (
@@ -13,21 +25,34 @@ const TechnologyPage = ({ products }) => {
          flex md:space-x-6"
       >
          {/* panel */}
-         <OptionsPanel />
+         <OptionsPanel setCategory={setCategory} />
+
+         {/* loading */}
+         {
+            loading && <p>loading</p>
+         }
+
+         {/* error */}
+         {
+            error && <p>{error}</p>
+         }
 
          {/* main section */}
-         <div className="w-full flex flex-col md:space-y-4 space-y-2">
+         {
+            data &&
+            <div className="w-full flex flex-col md:space-y-4 space-y-2">
 
-            {/* bar */}
-            <OptionsBar />
+               {/* bar */}
+               <OptionsBar setCategory={setCategory} />
 
-            {/* products */}
-            {
-               products.map(product => (
-                  <ProductItem key={product.id} product={product} />
-               ))
-            }
-         </div>
+               {/* products */}
+               {
+                  data.getProductsByCategory.map(product => (
+                     <ProductItem key={product.id} product={product} />
+                  ))
+               }
+            </div>
+         }
       </div>
    )
 }

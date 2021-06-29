@@ -32,14 +32,14 @@ const OptionsBar = () => {
    return (
       <>
          {/* bar */}
-         <div className="w-full h-10 px-4 flex relative md:hidden rounded-md bg-paper">
+         <div className="w-full h-10 px-4 flex relative md:hidden rounded-md bg-paper shadow">
 
             {/* categories */}
             <div className="flex items-center">
                <button
                   onClick={onCategoriesClick}
                   onBlur={onCloseDrawer}
-                  className="px-2 flex items-center space-x-2 rounded-md bg-paper"
+                  className="px-2 flex items-center ms:space-x-2 rounded-md bg-paper"
                >
                   <p className="md:text-lg font-medium">Categories</p>
                   <ChevronDownIcon

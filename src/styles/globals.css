@@ -24,6 +24,9 @@
       focus:outline-none focus:border-blue-800 focus:border-opacity-80
       focus:bg-transparent placeholder-gray-500 transition duration-700 ease-out;
    }
+   .divider-gray {
+      @apply border-b border-gray-500 border-opacity-50;
+   }
    .hover-active-gray {
       @apply sm:hover:bg-gray-500 sm:hover:bg-opacity-20
       sm:active:bg-gray-500 sm:active:bg-opacity-30

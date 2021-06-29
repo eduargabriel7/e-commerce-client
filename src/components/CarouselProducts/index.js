@@ -32,7 +32,6 @@ const CarouselProducts = ({ products }) => {
       autoplaySpeed: 5000,
       pauseOnHover: true,
       infinite: true,
-      speed: 700,
       slidesToShow: 4,
       swipeToSlide: true,
       prevArrow: <PrevArrow />,
@@ -45,7 +44,7 @@ const CarouselProducts = ({ products }) => {
             }
          },
          {
-            breakpoint: 600,
+            breakpoint: 500,
             settings: {
                autoplay: false,
                slidesToShow: 2,
