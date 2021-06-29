@@ -1,4 +1,5 @@
 // imported modules
+import cartActions from 'redux/cart/cartActions';
 import {
    ChevronLeftIcon, ChevronRightIcon
 } from '@heroicons/react/outline';
