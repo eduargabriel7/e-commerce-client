@@ -67,8 +67,8 @@
    --color-shadow-default: #20202057;
 }
 .dark {
-   --color-bg-default: #0f141a;
-   --color-bg-paper: #161d29;
+   --color-bg-default: #161d29;
+   --color-bg-paper: #0f141a;
    --color-bg-hover-paper: #171c22;
    --color-bg-primary: rgb(19, 38, 100);
    --color-bg-shadow: #7c7c7c60;

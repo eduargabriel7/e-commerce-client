@@ -40,7 +40,7 @@ const Layout = ({ children, theme }) => {
             {/* footer */}
             <div
                className="absolute bottom-0 md:h-60 h-48 w-full md:mt-20 mt-10
-               bg-black bg-opacity-10 shadow-invert"
+               bg-paper shadow-invert"
             >
 
             </div>
