@@ -6,7 +6,7 @@ module.exports = {
       extend: {
          boxShadow: {
             DEFAULT: 'var(--color-shadow-default) 0px 1.5px 5px 0px',
-            invert: 'var(--color-shadow-default) 0px -1px 5px 0px',
+            invert: 'var(--color-shadow-default) 0px -2px 5px 0px',
          },
          fontSize: {
             'xxs': '.60rem'
