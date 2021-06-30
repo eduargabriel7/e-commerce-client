@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import Head from 'next/head'
-import Nav from 'components/Nav';
+import Nav from 'components/shared-components/Nav';
 import cartActions from 'redux/cart/cartActions';
 import themeActions from 'redux/theme/themeActions';
 
@@ -39,7 +39,7 @@ const Layout = ({ children, theme }) => {
 
             {/* footer */}
             <div
-               className="absolute bottom-0 md:h-60 h-48 w-full md:mt-20 mt-10 bg-paper"
+               className="absolute bottom-0 md:h-60 h-48 w-full md:mt-20 mt-10 bg-paper shadow-invert"
             >
 
             </div>

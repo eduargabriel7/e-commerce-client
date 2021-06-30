@@ -1,8 +1,8 @@
 // imported modules
-import ProductPage from 'components/ProductPage';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
 import GET_PRODUCT from 'graphql/products/productsQuery/getProduct';
+import ProductPage from 'components/main-pages/ProductPage';
 
 // create page
 const Product = () => {

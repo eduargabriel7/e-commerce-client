@@ -7,10 +7,10 @@ import ProductItem from '../ProductItem';
 import OptionsBar from './OptionsBar';
 
 // create component
-const TechnologyPage = () => {
+const ClothingPage = () => {
 
    // state component
-   const [category, setCategory] = useState('technology');
+   const [category, setCategory] = useState('shirts');
 
    // graphql query
    const { loading, error, data } = useQuery(
@@ -58,4 +58,4 @@ const TechnologyPage = () => {
 }
 
 // export component
-export default TechnologyPage;
+export default ClothingPage;

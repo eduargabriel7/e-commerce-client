@@ -1,5 +1,5 @@
 // imported modules
-import TechnologyPage from 'components/CategoriesPages/TechnologyPage';
+import TechnologyPage from 'components/categories-pages/TechnologyPage';
 
 // create component
 const Technology = () => {

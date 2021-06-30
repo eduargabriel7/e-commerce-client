@@ -1,6 +1,6 @@
 // imported modules
-import Banner from 'components/Banner';
-import CarouselProducts from 'components/CarouselProducts';
+import Banner from './Banner';
+import CarouselProducts from 'components/shared-components/CarouselProducts';
 
 // create component
 const HomePage = ({ products }) => {

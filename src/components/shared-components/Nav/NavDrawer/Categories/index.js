@@ -53,6 +53,10 @@ const Categories = ({
                   <p className="sm:text-base font-medium">Technology</p>
                </button>
                <button
+                  onClick={() => {
+                     router.push('/products/clothing');
+                     onDrawerClose();
+                  }}
                   className="flex items-center space-x-2 py-3 md:px-6 px-4 button hover-active-gray"
                >
                   <ShoppingBagIcon className="button sm:h-10 h-9 p-2 text-icon" />

@@ -1,13 +1,16 @@
 // imported modules
 import { useQuery } from '@apollo/client';
-import GET_PRODUCTS from 'graphql/products/productsQuery/getProducts';
-import HomePage from 'components/HomePage';
+import GET_PRODUCTS_BY_CATEGORY from 'graphql/products/productsQuery/getProductsByCategory';
+import HomePage from 'components/main-pages/HomePage';
 
 // create page
 const Home = () => {
 
    // graphql query
-   const { loading, error, data } = useQuery(GET_PRODUCTS, { ssr: false });
+   const { loading, error, data } = useQuery(
+      GET_PRODUCTS_BY_CATEGORY,
+      { variables: { category: 'technology' } }
+   );
 
    if (loading) return (
       <div
@@ -29,7 +32,7 @@ const Home = () => {
 
    // render
    return (
-      <HomePage products={data.getProducts} />
+      <HomePage products={data.getProductsByCategory} />
    )
 }
 

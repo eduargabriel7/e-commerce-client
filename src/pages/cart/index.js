@@ -1,5 +1,5 @@
 // imported modules
-import CartPage from 'components/CartPage';
+import CartPage from 'components/main-pages/CartPage';
 
 // create page
 const Cart = () => {
