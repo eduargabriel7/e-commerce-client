@@ -24,7 +24,7 @@ const ProductItem = ({ product }) => {
          </div>
 
          {/* divider */}
-         <div className="border-b border-gray-500 border-opacity-20 w-full"></div>
+         <div className="divider-gray w-full"></div>
 
          {/* info */}
          <p className="md:text-lg font-roboto text-icon tracking-wide">

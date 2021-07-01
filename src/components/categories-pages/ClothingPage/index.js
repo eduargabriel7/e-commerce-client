@@ -3,20 +3,11 @@ import { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import GET_PRODUCTS_BY_CATEGORY from 'graphql/products/productsQuery/getProductsByCategory';
 import OptionsPanel from './OptionsPanel';
-import ProductItem from '../ProductItem';
 import OptionsBar from './OptionsBar';
+import ProductsList from '../shared-components/ProductsList';
 
 // create component
-const ClothingPage = () => {
-
-   // state component
-   const [category, setCategory] = useState('shirts');
-
-   // graphql query
-   const { loading, error, data } = useQuery(
-      GET_PRODUCTS_BY_CATEGORY,
-      { variables: { category } }
-   );
+const ClothingPage = ({ products }) => {
 
    // render
    return (
@@ -25,34 +16,13 @@ const ClothingPage = () => {
          flex md:space-x-6"
       >
          {/* panel */}
-         <OptionsPanel setCategory={setCategory} />
+         <OptionsPanel />
 
-         {/* loading */}
-         {
-            loading && <p>loading</p>
-         }
+         {/* bar */}
+         <OptionsBar />
 
-         {/* error */}
-         {
-            error && <p>{error}</p>
-         }
-
-         {/* main section */}
-         {
-            data &&
-            <div className="w-full flex flex-col md:space-y-4 space-y-2">
-
-               {/* bar */}
-               <OptionsBar setCategory={setCategory} />
-
-               {/* products */}
-               {
-                  data.getProductsByCategory.map(product => (
-                     <ProductItem key={product.id} product={product} />
-                  ))
-               }
-            </div>
-         }
+         {/* products */}
+         <ProductsList products={products} />
       </div>
    )
 }

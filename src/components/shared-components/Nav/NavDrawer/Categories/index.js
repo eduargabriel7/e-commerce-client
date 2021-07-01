@@ -42,25 +42,32 @@ const Categories = ({
                {/* divider */}
                <div className="divider-gray"></div>
 
+               {/* technology */}
                <button
                   onClick={() => {
-                     router.push('/products/technology');
+                     router.push('/categories/technology');
                      onDrawerClose();
                   }}
-                  className="flex items-center space-x-2 py-3 md:px-6 px-4 button hover-active-gray"
+                  className="flex items-center space-x-2 py-3 md:px-4 px-2 button hover-active-gray"
                >
                   <DesktopComputerIcon className="button sm:h-10 h-9 p-2 text-icon" />
-                  <p className="sm:text-base font-medium">Technology</p>
+                  <p className="sm:text-base font-medium">
+                     Technology
+                  </p>
                </button>
+
+               {/* clothing */}
                <button
                   onClick={() => {
-                     router.push('/products/clothing');
+                     router.push('/categories/clothing');
                      onDrawerClose();
                   }}
-                  className="flex items-center space-x-2 py-3 md:px-6 px-4 button hover-active-gray"
+                  className="flex items-center space-x-2 py-3 md:px-4 px-2 button hover-active-gray"
                >
                   <ShoppingBagIcon className="button sm:h-10 h-9 p-2 text-icon" />
-                  <p className="sm:text-base font-medium">Clothing</p>
+                  <p className="sm:text-base font-medium">
+                     Clothing
+                  </p>
                </button>
 
                {/* divider */}

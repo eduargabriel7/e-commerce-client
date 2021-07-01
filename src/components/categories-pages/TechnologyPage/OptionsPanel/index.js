@@ -1,7 +1,11 @@
-import React from 'react'
+// imported modules
+import { useRouter } from 'next/router';
 
 // create component
-const OptionsPanel = ({ setCategory }) => {
+const OptionsPanel = () => {
+
+   // next hooks
+   const router = useRouter();
 
    // render
    return (
@@ -9,24 +13,28 @@ const OptionsPanel = ({ setCategory }) => {
 
          {/* category */}
          <p
-            className="md:text-lg font-semibold p-2 border-b border-gray-500 
-               border-opacity-50 text-blue-700"
+            onClick={() => router.push(`/categories/technology`)}
+            className="w-min p-2 md:text-base font-semibold text-blue-700
+            button hover-active-gray rounded-md"
          >
             Technology
          </p>
 
+         {/* divider */}
+         <div className="divider-gray w-full"></div>
+
          {/* Computers */}
          <p
-            onClick={() => setCategory('computers')}
+            onClick={() => router.push(`/categories/technology/computers`)}
             className="md:text-base font-medium p-2 button hover-active-gray
-               rounded-md w-min"
+            rounded-md w-min"
          >
             Computers
          </p>
 
          {/* Notebooks */}
          <p
-            onClick={() => setCategory('notebooks')}
+            onClick={() => router.push(`/categories/technology/notebooks`)}
             className="md:text-base font-medium p-2 button hover-active-gray
                rounded-md w-min"
          >
@@ -35,7 +43,7 @@ const OptionsPanel = ({ setCategory }) => {
 
          {/* cell phones */}
          <p
-            onClick={() => setCategory('cellphones')}
+            onClick={() => router.push(`/categories/technology/cellphones`)}
             className="md:text-base font-medium p-2 button hover-active-gray
                rounded-md w-min whitespace-nowrap"
          >
@@ -44,7 +52,7 @@ const OptionsPanel = ({ setCategory }) => {
 
          {/* gaming */}
          <p
-            onClick={() => setCategory('gamming')}
+            onClick={() => router.push(`/categories/technology/gaming`)}
             className="md:text-base font-medium p-2 button hover-active-gray
                rounded-md w-min whitespace-nowrap"
          >

@@ -18,14 +18,12 @@ module.exports = {
          backgroundColor: {
             default: "var(--color-bg-default)",
             paper: "var(--color-bg-paper)",
+            footer: "var(--color-bg-footer)",
             shadow: "var(--color-bg-shadow)"
          },
          textColor: {
             default: "var(--color-text-default)",
-            disabled: "var(--color-text-disabled)",
-            icon: "var(--color-text-icon)",
-            primary: "var(--color-text-primary)",
-            secondary: "var(--color-text-secondary)",
+            icon: "var(--color-text-icon)"
          },
          spacing: {
             104: "26rem",
@@ -64,6 +62,30 @@ module.exports = {
                '0%': { maxHeight: '15rem', opacity: 1 },
                '100%': { maxHeight: '0', opacity: 0.5 }
             }
+         },
+         minWidth: {
+            '0': '0',
+            '8': '2rem',
+            '12': '3rem',
+            '1/4': '25%',
+            '1/2': '50%',
+            '3/4': '75%',
+            'full': '100%',
+         },
+         minHeight: {
+            '0': '0',
+            '8': '2rem',
+            '16': '4rem',
+            '32': '8rem',
+            '64': '16rem',
+            '72': '18rem',
+            '80': '20rem',
+            '12': '3rem',
+            '1/4': '25%',
+            '1/2': '50%',
+            '3/4': '75%',
+            'full': '100%',
+            'screen': '100vh'
          }
       },
       screens: {
@@ -77,30 +99,6 @@ module.exports = {
          // => @media (min-width: 1280px) { ... }
          '2xl': '1536px',
          // => @media (min-width: 1536px) { ... }
-      },
-      minWidth: {
-         '0': '0',
-         '8': '2rem',
-         '12': '3rem',
-         '1/4': '25%',
-         '1/2': '50%',
-         '3/4': '75%',
-         'full': '100%',
-      },
-      minHeight: {
-         '0': '0',
-         '8': '2rem',
-         '16': '4rem',
-         '32': '8rem',
-         '64': '16rem',
-         '72': '18rem',
-         '80': '20rem',
-         '12': '3rem',
-         '1/4': '25%',
-         '1/2': '50%',
-         '3/4': '75%',
-         'full': '100%',
-         'screen': '100vh'
       }
    },
    variants: {

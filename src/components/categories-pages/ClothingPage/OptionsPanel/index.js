@@ -1,7 +1,11 @@
 // imported modules
+import { useRouter } from 'next/router';
 
 // create component
-const OptionsPanel = ({ setCategory }) => {
+const OptionsPanel = () => {
+
+   // next hooks
+   const router = useRouter();
 
    // render
    return (
@@ -9,6 +13,7 @@ const OptionsPanel = ({ setCategory }) => {
 
          {/* category */}
          <p
+            onClick={() => router.push(`/categories/clothing`)}
             className="md:text-lg font-semibold p-2 border-b border-gray-500 
             border-opacity-50 text-blue-700"
          >
@@ -17,7 +22,7 @@ const OptionsPanel = ({ setCategory }) => {
 
          {/* Shirts */}
          <p
-            onClick={() => setCategory('shirts')}
+            onClick={() => router.push(`/categories/clothing/shirts`)}
             className="md:text-base font-medium p-2 button hover-active-gray
             rounded-md w-min"
          >
@@ -26,7 +31,7 @@ const OptionsPanel = ({ setCategory }) => {
 
          {/* Jackets */}
          <p
-            onClick={() => setCategory('jackets')}
+            onClick={() => router.push(`/categories/clothing/jackets`)}
             className="md:text-base font-medium p-2 button hover-active-gray
             rounded-md w-min"
          >
@@ -35,7 +40,7 @@ const OptionsPanel = ({ setCategory }) => {
 
          {/* Jeans */}
          <p
-            onClick={() => setCategory('jeans')}
+            onClick={() => router.push(`/categories/clothing/jeans`)}
             className="md:text-base font-medium p-2 button hover-active-gray
             rounded-md w-min"
          >
@@ -44,7 +49,7 @@ const OptionsPanel = ({ setCategory }) => {
 
          {/* Sneakers */}
          <p
-            onClick={() => setCategory('sneakers')}
+            onClick={() => router.push(`/categories/clothing/sneakers`)}
             className="md:text-base font-medium p-2 button hover-active-gray
             rounded-md w-min whitespace-nowrap"
          >

@@ -8,15 +8,15 @@ const CarouselItem = () => {
    return (
       <div
          className="md:h-80 h-52 md:p-4 p-2 md:m-4 m-2 
-         flex flex-col justify-between bg-paper rounded-md"
+         flex flex-col justify-between bg-paper rounded-md shadow"
       >
          {/* image */}
-         <div className="h-3/5 bg-default animate-pulse"></div>
+         <div className="h-3/5 bg-default rounded-lg animate-pulse"></div>
          {/* info */}
-         <p className="w-1/4 md:h-6 h-4 bg-default animate-pulse"></p>
-         <div className="w-3/4 md:h-6 h-4 bg-default animate-pulse"></div>
+         <p className="w-1/4 md:h-6 h-4 bg-default rounded-lg animate-pulse"></p>
+         <div className="w-3/4 md:h-6 h-4 bg-default rounded-lg animate-pulse"></div>
          {/* tools */}
-         <p className="w-1/4 md:h-6 h-4 bg-default animate-pulse"></p>
+         <p className="w-1/4 md:h-6 h-4 bg-default rounded-lg animate-pulse"></p>
       </div>
    )
 }

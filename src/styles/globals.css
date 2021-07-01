@@ -58,25 +58,19 @@
 .light {
    --color-bg-default: #e7e7e7;
    --color-bg-paper: #ffffff;
+   --color-bg-footer: #cccccc;
    --color-bg-shadow: #181818cc;
    --color-text-default: #000000;
-   --color-text-disabled: #505050;
    --color-text-icon: #0e0e0ed7;
-   --color-text-primary: #354fc4;
-   --color-text-secondary: #5b2ab6;
    --color-shadow-default: #20202057;
 }
 .dark {
    --color-bg-default: #161d29;
    --color-bg-paper: #0f141a;
-   --color-bg-hover-paper: #171c22;
-   --color-bg-primary: rgb(19, 38, 100);
+   --color-bg-footer: #10151f;
    --color-bg-shadow: #7c7c7c60;
    --color-text-default: #ffffff;
-   --color-text-disabled: #a7a7a7;
    --color-text-icon: #e6e6e6da;
-   --color-text-primary: #243eb4;
-   --color-text-secondary: #5b2ab6;
    --color-shadow-default: #81818134;
 }
 

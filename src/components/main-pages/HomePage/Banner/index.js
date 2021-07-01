@@ -35,12 +35,10 @@ const Banner = () => {
 
    // slider settings
    const settings = {
-      fade: true,
       autoplay: true,
       autoplaySpeed: 3000,
       pauseOnHover: true,
       infinite: true,
-      speed: 1000,
       slidesToShow: 1,
       prevArrow: <PrevArrow />,
       nextArrow: <NextArrow />,
@@ -62,11 +60,13 @@ const Banner = () => {
       <Slider {...settings}>
          {
             images.map(image => (
-               <div key={image} className="relative lg:h-112 md:h-96 sm:h-72 h-52">
+               <div
+                  key={image}
+                  className="relative lg:h-112 md:h-96 sm:h-72 h-52 bg-paper"
+               >
                   <Image
-                     src={image} alt="banner-picture"
+                     src={image.src} priority
                      layout="fill" objectFit="cover"
-                     priority
                   />
                </div>
             ))
