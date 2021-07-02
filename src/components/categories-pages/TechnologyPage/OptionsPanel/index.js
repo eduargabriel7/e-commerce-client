@@ -13,9 +13,7 @@ const OptionsPanel = () => {
 
          {/* category */}
          <p
-            onClick={() => router.push(`/categories/technology`)}
-            className="w-min p-2 md:text-base font-semibold text-blue-700
-            button hover-active-gray rounded-md"
+            className="w-min p-2 md:text-base font-semibold text-blue-700"
          >
             Technology
          </p>

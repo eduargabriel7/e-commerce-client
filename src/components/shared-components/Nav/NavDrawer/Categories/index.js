@@ -45,7 +45,7 @@ const Categories = ({
                {/* technology */}
                <button
                   onClick={() => {
-                     router.push('/categories/technology');
+                     router.push('/categories/technology/computers');
                      onDrawerClose();
                   }}
                   className="flex items-center space-x-2 py-3 md:px-4 px-2 button hover-active-gray"
@@ -59,7 +59,7 @@ const Categories = ({
                {/* clothing */}
                <button
                   onClick={() => {
-                     router.push('/categories/clothing');
+                     router.push('/categories/clothing/shirts');
                      onDrawerClose();
                   }}
                   className="flex items-center space-x-2 py-3 md:px-4 px-2 button hover-active-gray"

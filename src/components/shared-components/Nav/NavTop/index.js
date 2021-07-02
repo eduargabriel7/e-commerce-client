@@ -3,9 +3,9 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { connect } from 'react-redux';
 import cartActions from 'redux/cart/cartActions';
+import Searcher from './Searcher';
 import {
-   ShoppingCartIcon, SearchIcon, MenuIcon,
-   UserCircleIcon
+   ShoppingCartIcon, MenuIcon
 } from '@heroicons/react/outline'
 
 // create component
@@ -24,7 +24,7 @@ const NavTop = ({
 
    // render
    return (
-      <div className="fixed top-0 w-full md:h-20 h-16 shadow z-40 bg-paper">
+      <div className="md:h-20 h-16 w-full top-0 fixed z-40 shadow bg-paper">
          <div
             className="max-w-screen-lg mx-auto h-full w-full flex items-center
             space-x-2 px-2"
@@ -38,38 +38,27 @@ const NavTop = ({
             </div>
 
             {/* logo */}
-            <p
-               onClick={() => router.push('/')}
-               className="button md:flex hidden w-1/4 text-lg"
-            >
-               Tech Commerce
-            </p>
+            <div className="w-1/4 md:flex hidden">
+               <p
+                  onClick={() => router.push('/')}
+                  className="text-base font-medium button hover:underline"
+               >
+                  E-Commerce
+               </p>
+            </div>
 
-            {/* search */}
+            {/* searcher */}
             <div className="md:w-2/4 w-full sm:px-8 md:px-0">
-               <div className="w-full md:h-10 h-8 flex items-center space-x-2 py-1 px-2 shadow rounded-md">
-                  <SearchIcon className="md:h-5 h-4 text-gray-500" />
-                  <input
-                     type="text"
-                     placeholder="Search"
-                     className="w-full h-full bg-transparent focus:outline-none placeholder-gray-500
-                     focus:placeholder-opacity-0"
-                  />
-               </div>
+               <Searcher />
             </div>
 
             {/* tools */}
-            <div className="md:w-1/4 flex items-center justify-end md:space-x-2">
-
-               {/* user */}
-               <UserCircleIcon
-                  className="md:h-10 h-9 p-2 rounded-full button hover-active-gray text-icon"
-               />
+            <div className="md:w-1/4 flex items-center justify-end">
 
                {/* cart */}
                <div
                   onClick={() => router.push('/cart')}
-                  className="relative button hover-active-gray p-2 rounded-full"
+                  className="p-2 relative button hover-active-gray rounded-full"
                >
                   <ShoppingCartIcon
                      className="md:h-6 h-5 text-icon"
@@ -83,6 +72,12 @@ const NavTop = ({
                      {quantityCartProducts}
                   </p>
                </div>
+               <p
+                  onClick={() => router.push('/cart')}
+                  className="md:flex text-base font-medium hidden button hover:underline"
+               >
+                  Cart
+               </p>
             </div>
          </div>
       </div>

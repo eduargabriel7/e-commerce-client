@@ -8,7 +8,7 @@ const CarouselItem = () => {
    return (
       <div
          className="md:h-80 h-52 md:p-4 p-2 md:m-4 m-2 
-         flex flex-col justify-between bg-paper rounded-md shadow"
+         flex flex-col justify-between bg-paper rounded-md"
       >
          {/* image */}
          <div className="h-3/5 bg-default rounded-lg animate-pulse"></div>

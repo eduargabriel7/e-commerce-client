@@ -13,12 +13,13 @@ const OptionsPanel = () => {
 
          {/* category */}
          <p
-            onClick={() => router.push(`/categories/clothing`)}
-            className="md:text-lg font-semibold p-2 border-b border-gray-500 
-            border-opacity-50 text-blue-700"
+            className="w-min p-2 md:text-base font-semibold text-blue-700"
          >
             Clothing
          </p>
+
+         {/* divider */}
+         <div className="divider-gray w-full"></div>
 
          {/* Shirts */}
          <p

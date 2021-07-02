@@ -1,11 +1,14 @@
 // imported modules
-
+import { useRouter } from 'next/router';
 
 // create component
 const CategoriesDrawer = ({
    openCategories,
    drawerAnimation
 }) => {
+
+   // next hooks
+   const router = useRouter();
 
    // render
    return (
@@ -17,25 +20,36 @@ const CategoriesDrawer = ({
                rounded-md flex flex-col animate-expand-height overflow-hidden
                ${drawerAnimation === 'open' ? 'animate-expand-height' : 'animate-collapse-height'}`}
             >
+               {/* shirts */}
                <button
-                  className="p-4"
+                  onClick={() => router.push(`/categories/clothing/shirts`)}
+                  className="p-4 hover-active-gray"
                >
-                  <p>Notebooks</p>
+                  <p>T-Shirts</p>
                </button>
+
+               {/* jackets */}
                <button
-                  className="p-4"
+                  onClick={() => router.push(`/categories/clothing/jackets`)}
+                  className="p-4 hover-active-gray"
                >
-                  <p>Computers</p>
+                  <p>Jackets</p>
                </button>
+
+               {/* jeans */}
                <button
-                  className="p-4"
+                  onClick={() => router.push(`/categories/clothing/jeans`)}
+                  className="p-4 hover-active-gray"
                >
-                  <p>Cell Phones</p>
+                  <p>Jeans</p>
                </button>
+
+               {/* sneakers */}
                <button
-                  className="p-4"
+                  onClick={() => router.push(`/categories/clothing/sneakers`)}
+                  className="p-4 hover-active-gray"
                >
-                  <p>Gaming</p>
+                  <p>sneakers</p>
                </button>
             </div>
          }

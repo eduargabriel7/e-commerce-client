@@ -4,6 +4,9 @@ module.exports = {
    darkMode: false, // or 'media' or 'class'
    theme: {
       extend: {
+         transitionProperty: {
+            'height': 'height'
+         },
          boxShadow: {
             DEFAULT: 'var(--color-shadow-default) 0px 1.5px 5px 0px',
             invert: 'var(--color-shadow-default) 0px -1px 5px 0px',
@@ -34,7 +37,7 @@ module.exports = {
             'close-bg-shadow': 'animation-close-bg-shadow 0.5s',
             'open-drawer': 'animation-open-drawer 0.5s',
             'close-drawer': 'animation-close-drawer 0.5s',
-            'expand-height': 'animation-expand-height 0.5s',
+            'expand-height': 'animation-expand-height 0.7s',
             'collapse-height': 'animation-collapse-height 0.5s'
          },
          keyframes: {
@@ -56,10 +59,10 @@ module.exports = {
             },
             'animation-expand-height': {
                '0%': { maxHeight: '0', opacity: 0.5 },
-               '100%': { maxHeight: '15rem', opacity: 1 }
+               '100%': { maxHeight: '20rem', opacity: 1 }
             },
             'animation-collapse-height': {
-               '0%': { maxHeight: '15rem', opacity: 1 },
+               '0%': { maxHeight: '20rem', opacity: 1 },
                '100%': { maxHeight: '0', opacity: 0.5 }
             }
          },
