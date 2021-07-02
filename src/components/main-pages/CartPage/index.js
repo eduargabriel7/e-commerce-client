@@ -16,7 +16,7 @@ const CartPage = ({ cartProducts, totalAmount }) => {
    // render
    return (
       <div
-         className="max-w-screen-xl mx-auto md:pt-28 pt-20 md:pb-72 pb-56 md:px-4 px-2"
+         className="max-w-screen-xl mx-auto md:pt-28 pt-20 md:pb-64 pb-36 md:px-4 px-2"
       >
          <div
             className="w-full rounded-md flex lg:flex-row lg:space-x-4 lg:space-y-0

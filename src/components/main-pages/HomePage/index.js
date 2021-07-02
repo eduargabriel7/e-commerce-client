@@ -18,8 +18,8 @@ const HomePage = () => {
    // render
    return (
       <div
-         className="max-w-screen-xl mx-auto md:pt-20 pt-16 md:pb-72 pb-56
-         flex flex-col md:space-y-20 space-y-10"
+         className="max-w-screen-xl mx-auto md:pt-20 pt-16 md:pb-64 pb-36
+         flex flex-col md:space-y-16 space-y-8"
       >
          {/* banner */}
          <Banner />
