@@ -57,7 +57,8 @@ const NavDrawer = ({
                {/* menu */}
                <div
                   className={`${drawerAnimation === 'open' ? 'animate-open-drawer' : 'animate-close-drawer'}
-                  h-screen xl:w-96 md:w-80 sm:w-72 w-56 flex flex-col fixed z-50 bg-paper`}
+                  h-screen xl:w-96 md:w-80 sm:w-72 w-56 flex flex-col fixed z-50 bg-paper
+                   overflow-auto overscroll-contain`}
                >
 
                   {/* header */}
