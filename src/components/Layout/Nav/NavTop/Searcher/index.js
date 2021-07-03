@@ -63,7 +63,7 @@ const Searcher = () => {
                <div
                   className={`absolute md:top-12 sm:top-10 top-16 -left-2
                   w-full sm:h-auto sm:max-h-80 h-screen flex flex-col bg-paper 
-                  sm:shadow sm:rounded-b-md overflow-auto
+                  sm:shadow sm:rounded-b-md sm:overflow-hidden overflow-auto
                   overscroll-contain
                   ${drawerAnimation === 'open' ?
                         'sm:animate-expand-height animate-open-drawer' :

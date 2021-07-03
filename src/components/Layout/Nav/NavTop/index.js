@@ -41,7 +41,7 @@ const NavTop = ({
             <div className="w-1/4 md:flex hidden">
                <p
                   onClick={() => router.push('/')}
-                  className="text-base font-medium button hover:underline"
+                  className="text-base text-icon font-semibold button hover:underline"
                >
                   E-Commerce
                </p>
@@ -74,7 +74,7 @@ const NavTop = ({
                </div>
                <p
                   onClick={() => router.push('/cart')}
-                  className="md:flex text-base font-medium hidden button hover:underline"
+                  className="hidden md:flex text-icon text-base font-semibold button hover:underline"
                >
                   Cart
                </p>
